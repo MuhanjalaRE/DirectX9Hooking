@@ -252,9 +252,9 @@ HRESULT __stdcall EndSceneHook(LPDIRECT3DDEVICE9 device) {
         ImGui::Begin("crosshair", NULL, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoBringToFrontOnFocus);
         ImGui::Image((void*)crosshair->texture_, ImVec2(crosshair->width_, crosshair->height_));
         ImGui::End();
+        ImGui::PopStyleVar();
     }
 
-    ImGui::PopStyleVar();
     ImGui::EndFrame();
     ImGui::Render();
     ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
